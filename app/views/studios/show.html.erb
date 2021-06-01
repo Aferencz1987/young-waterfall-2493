@@ -2,7 +2,7 @@
 <h2> <%= @studio.location %> </h2>
 
 
-<% @studio.movies.each do |movie| %>
+<% @movie.each do |movie| %>
   <%= movie.title %>
   <br>
   <% movie.actors_sorted_by_age.each do |actor| %>

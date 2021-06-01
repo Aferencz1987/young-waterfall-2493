@@ -4,7 +4,10 @@ class Movie < ApplicationRecord
   has_many :actors, through: :movie_actors
 
   def actors_sorted_by_age
-    actors.order(:age)
+    actors.order(age: :desc)
   end
 
+  def actor_names
+    actors.pluck(:name)
+  end
 end
