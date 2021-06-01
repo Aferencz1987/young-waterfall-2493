@@ -27,6 +27,7 @@ RSpec.describe 'studio show page' do
     MovieActor.create!(movie_id: movie1.id, actor_id: actor1.id)
     MovieActor.create!(movie_id: movie2.id, actor_id: actor2.id)
     MovieActor.create!(movie_id: movie3.id, actor_id: actor3.id)
+
     visit "/studio/#{studio1.id}"
 
     expect(page).to have_content(actor1.name)
