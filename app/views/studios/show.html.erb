@@ -1,6 +1,17 @@
 <h1> <%= @studio.name %> </h1>
 <h2> <%= @studio.location %> </h2>
 
+
 <% @studio.movies.each do |movie| %>
-<%= movie.title %>
+  <%= movie.title %>
+  <br>
+  <% movie.actors_sorted_by_age.each do |actor| %>
+    <% if actor.working == true %>
+      <%= actor.name %>
+      <%= actor.age %>
+    <% else %>
+      Actor not listed due to "not working" status
+    <% end %>
+  <% end %>
+  <br>
 <% end %>
